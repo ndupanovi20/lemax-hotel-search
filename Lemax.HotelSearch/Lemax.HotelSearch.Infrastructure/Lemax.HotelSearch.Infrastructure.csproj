@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lemax.HotelSearch.Application\Lemax.HotelSearch.Application.csproj" />
+    <ProjectReference Include="..\Lemax.HotelSearch.Domain\Lemax.HotelSearch.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

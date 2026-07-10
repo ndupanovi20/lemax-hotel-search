@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Lemax.HotelSearch.Api/Lemax.HotelSearch.Api.csproj" />
+  <Project Path="Lemax.HotelSearch.Application/Lemax.HotelSearch.Application.csproj" />
+  <Project Path="Lemax.HotelSearch.Domain/Lemax.HotelSearch.Domain.csproj" />
+  <Project Path="Lemax.HotelSearch.Infrastructure/Lemax.HotelSearch.Infrastructure.csproj" />
+  <Project Path="Lemax.HotelSearch.Tests/Lemax.HotelSearch.Tests.csproj" />
+</Solution>

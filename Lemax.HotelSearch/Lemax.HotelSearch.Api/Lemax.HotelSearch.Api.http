@@ -1,0 +1,6 @@
+@Lemax.HotelSearch.Api_HostAddress = http://localhost:5164
+
+GET {{Lemax.HotelSearch.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
