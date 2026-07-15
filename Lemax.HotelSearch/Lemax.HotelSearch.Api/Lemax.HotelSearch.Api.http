@@ -1,6 +1,20 @@
-@Lemax.HotelSearch.Api_HostAddress = http://localhost:5164
+@baseUrl = https://localhost:7180
 
-GET {{Lemax.HotelSearch.Api_HostAddress}}/weatherforecast/
+### Get all hotels
+GET {{baseUrl}}/api/Hotels
 Accept: application/json
 
-###
+### Create hotel
+POST {{baseUrl}}/api/Hotels
+Content-Type: application/json
+
+{
+  "name": "Zagreb Central Rooms",
+  "price": 55,
+  "latitude": 45.8131,
+  "longitude": 15.9775
+}
+
+### Search hotels near Zagreb under 100 euros
+GET {{baseUrl}}/api/Hotels/search?prompt=I need a hotel near Zagreb under 100 euros&page=1&pageSize=10
+Accept: application/json
