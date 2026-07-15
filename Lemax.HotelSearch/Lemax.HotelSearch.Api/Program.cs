@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IHotelRepository, InMemoryHotelRepository>();
 builder.Services.AddScoped<IHotelService, HotelService>();
+builder.Services.AddScoped<IHotelSearchService, HotelSearchService>();
 
 var app = builder.Build();
 

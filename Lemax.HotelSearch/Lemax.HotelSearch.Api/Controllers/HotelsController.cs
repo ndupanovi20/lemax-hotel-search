@@ -9,10 +9,13 @@ namespace Lemax.HotelSearch.Api.Controllers;
 public sealed class HotelsController : ControllerBase
 {
     private readonly IHotelService _hotelService;
+    private readonly IHotelSearchService _hotelSearchService;
 
-    public HotelsController(IHotelService hotelService)
+    public HotelsController(IHotelService hotelService, IHotelSearchService hotelSearchService)
     {
         _hotelService = hotelService ?? throw new ArgumentNullException(nameof(hotelService));
+
+        _hotelSearchService = hotelSearchService ?? throw new ArgumentNullException(nameof(hotelSearchService));
     }
 
     [HttpGet]
@@ -21,6 +24,32 @@ public sealed class HotelsController : ControllerBase
         var hotels = await _hotelService.GetAllAsync(cancellationToken);
 
         return Ok(hotels);
+    }
+
+    [HttpGet("search")]
+    public async Task<ActionResult<PagedResponse<SearchHotelResponse>>> Search(
+    [FromQuery] string prompt,
+    [FromQuery] int page = 1,
+    [FromQuery] int pageSize = 10,
+    CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var request = new SearchHotelsRequest
+            {
+                Prompt = prompt,
+                Page = page,
+                PageSize = pageSize
+            };
+
+            var result = await _hotelSearchService.SearchAsync(request, cancellationToken);
+
+            return Ok(result);
+        }
+        catch (ArgumentException exception)
+        {
+            return BadRequest(new { error = exception.Message });
+        }
     }
 
     [HttpGet("{id:guid}")]
