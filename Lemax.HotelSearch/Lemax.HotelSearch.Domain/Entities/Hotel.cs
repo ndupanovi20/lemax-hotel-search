@@ -1,5 +1,6 @@
 ﻿
 using Lemax.HotelSearch.Domain.ValueObjects;
+
 namespace Lemax.HotelSearch.Domain.Entities;
 
 public sealed class Hotel

@@ -28,10 +28,10 @@ public sealed class HotelsController : ControllerBase
 
     [HttpGet("search")]
     public async Task<ActionResult<PagedResponse<SearchHotelResponse>>> Search(
-    [FromQuery] string prompt,
-    [FromQuery] int page = 1,
-    [FromQuery] int pageSize = 10,
-    CancellationToken cancellationToken = default)
+        [FromQuery] string prompt,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 10,
+        CancellationToken cancellationToken = default)
     {
         try
         {
