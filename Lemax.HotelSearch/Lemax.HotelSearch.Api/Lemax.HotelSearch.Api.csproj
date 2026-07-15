@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Lemax.HotelSearch.Infrastructure\Lemax.HotelSearch.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
